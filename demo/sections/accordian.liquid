@@ -1,0 +1,146 @@
+<div class="cus-tabs-content" >
+    <div class="cus-accordian-title">
+      {% if section.settings.main_title != blank %}
+      <h2>{{ section.settings.main_title }}</h2>
+      {% endif %}
+    </div>
+    <div class="cus-tabs-list" >
+      {% for block in section.blocks %}
+      <div class="cus-tab-item-title" >
+        <div class="cus-tab-title" >
+          <h1 class="cus-tab-title-main" >{{ block.settings.cus_title}}</h1><span class="angle-down" ><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+        </div>
+        <div class="cus-tab-content" >
+          {% if block.settings.cus_desc != blank %}
+          <p>{{ block.settings.cus_desc}}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+
+
+<style>
+  .cus-tab-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .cus-tab-item-title .cus-tab-content {
+    display: none;
+  }
+  .cus-tab-item-title.open-active .cus-tab-content {
+    display: block;
+  }
+  .cus-tab-item-title .cus-tab-title span.cus-minus-icon {
+    display: none;
+  }
+  .cus-tab-item-title.open-active .cus-tab-title span.cus-plus-icon {
+    display: none;
+  }
+  .cus-tab-item-title.open-active .cus-tab-title span.cus-minus-icon {
+    display: block;
+  }
+  .cus-tabs-content {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 55px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cus-accordian-title {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+  .cus-tabs-list {
+    flex: 0 0 66.66%;
+    max-width: 66.66%;
+  }
+  .cus-tab-item-title.open-active span.angle-down i.fa {
+    transform: rotate(180deg);
+  }
+  .cus-accordian-title h2 {
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    font-size: 25px;
+  }
+  .cus-tab-title h1.cus-tab-title-main {
+    font-size: 25px;
+  }
+  .cus-tab-item-title {
+    padding-bottom: 30px;
+  }
+  .cus-tab-title span.angle-down i.fa {
+    font-size: 30px;
+}
+</style>
+<script>
+$(document).ready(function(){
+
+  $(".cus-tab-title").click(function(){
+	if($(this).parent().hasClass( "open-active" )){
+	  $(".cus-tab-item-title").removeClass('open-active');
+	}else{
+	  $(".cus-tab-item-title").removeClass('open-active');
+    $(this).parent().addClass("open-active");
+	}
+	
+  });
+});
+</script>
+
+
+{% schema %}
+{
+   "name":"accordian section",
+   "settings":[
+      {
+        "type":"text",
+        "id":"main_title",
+        "label":"Title"
+      }
+   ],
+   "blocks":[
+      {
+         "type":"accordian",
+         "name":"block",
+         "settings":[
+            {
+               "type":"text",
+               "id":"cus_title",
+               "label":"Title"
+            },
+            {
+               "type":"textarea",
+               "id":"cus_desc",
+               "label":"Description"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":{
+            "en":"accordian section"
+         },
+         "category":{
+            "en":"accordian section"
+         }
+      }
+   ]
+}
+{% endschema %}
+
+
+
+
+
+
+
+
+
+

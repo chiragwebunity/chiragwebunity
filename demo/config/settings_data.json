@@ -1,0 +1,1277 @@
+{
+  "current": {
+    "color_text": "#3a3a3a",
+    "color_body_text": "#333232",
+    "color_sale_text": "#fa4545",
+    "color_button": "#3a3a3a",
+    "color_button_text": "#ffffff",
+    "color_small_button_text_border": "#3a3a3a",
+    "color_text_field_text": "#000000",
+    "color_text_field_border": "#cccccc",
+    "color_text_field": "#ffffff",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#685858",
+    "image_overlay_opacity": 40,
+    "color_borders": "#ebebeb",
+    "color_body_bg": "#ffffff",
+    "type_header_font": "helvetica_n7",
+    "type_header_base_size": 26,
+    "type_base_font": "helvetica_n4",
+    "type_base_size": 15,
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "share_image": "",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "https:\/\/www.instagram.com\/?hl=en",
+    "social_facebook_link": "https:\/\/www.instagram.com\/?hl=en",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/?hl=en",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "shopify:\/\/shop_images\/Logo-KOME-Header_Big_e19b1271-dffa-46a8-a124-9e6cc3e04da6.png",
+    "enable_ajax": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "align_logo": "left",
+          "logo": "shopify:\/\/shop_images\/Logo-KOME-Header_Big.png",
+          "logo_max_width": 100,
+          "main_linklist": "main-menu",
+          "message": true,
+          "home_page_only": true,
+          "message_text": "envio gratis a partir de $35",
+          "message_link": "",
+          "color_bg": "#ffa300",
+          "color_text": "#ffffff"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1590740237078": {
+            "type": "text",
+            "settings": {
+              "bg_logo": "shopify:\/\/shop_images\/Logo-KOME-Header_Big.png",
+              "title": "",
+              "text": ""
+            }
+          },
+          "1590739742288": {
+            "type": "link_list",
+            "settings": {
+              "title": "",
+              "menu": "footer"
+            }
+          },
+          "1590739749609": {
+            "type": "link_list",
+            "settings": {
+              "title": "",
+              "menu": "footer-2"
+            }
+          },
+          "1597818078551": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick links",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "1590740237078",
+          "1590739742288",
+          "1590739749609",
+          "1597818078551"
+        ],
+        "settings": {
+          "show_payment_icons": true,
+          "color_footer_bg": "#f6f6f6",
+          "color_footer_text": "#333232",
+          "show_locale_selector": true,
+          "show_currency_selector": true
+        }
+      },
+      "1590222101981": {
+        "type": "image-with-button",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/MAIN-BANNER-HOME_Opt.png",
+          "button_label_1": "descubrelo",
+          "button_link_1": "shopify:\/\/pages\/tabbing-collection",
+          "bg_logo": "shopify:\/\/shop_images\/slider-btn-bg.png"
+        }
+      },
+      "1590228852807": {
+        "type": "logo-bar",
+        "blocks": {
+          "1590228852807-0": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/pro-trust-1-1.png",
+              "link": ""
+            }
+          },
+          "1590228852807-1": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/pro-trust-2-1.png",
+              "link": ""
+            }
+          },
+          "1590228852807-2": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/pro-trust-3-1.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1590228852807-0",
+          "1590228852807-1",
+          "1590228852807-2"
+        ],
+        "settings": {
+          "title": "somos kome"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show_quantity_selector": true,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_payment_button": true,
+          "show_share_buttons": true,
+          "media_size": "medium",
+          "enable_image_zoom": false,
+          "enable_video_looping": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_vendor": false
+        }
+      },
+      "1590636970099": {
+        "type": "logo-with-image-text",
+        "blocks": {
+          "1590636970099-0": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/section-4-img-2.png",
+              "img_title": "entrega en 24h-48h",
+              "img_info": "recibe tu envío en 24h si realizas tu pedido antes de las 12pm",
+              "link": ""
+            }
+          },
+          "1590636970099-1": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/section-4-img-1.png",
+              "img_title": "envío gratuito a partir de 35€",
+              "img_info": "Para el resto de pedidos, tarifa plana de envío 3,90€",
+              "link": ""
+            }
+          },
+          "1590636970099-2": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/section-4-img.png",
+              "img_title": "echamos una patita",
+              "img_info": "KOME no existiría si no fuera responsable. ¡Compra comida, Dona comida!",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1590636970099-0",
+          "1590636970099-1",
+          "1590636970099-2"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "1590640551667": {
+        "type": "image-with-btn-text",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/New-Big-Banner_Alba_Opt.png",
+          "button_label_1": "saber mas",
+          "button_link_1": "shopify:\/\/pages\/know-more",
+          "bg_logo": "shopify:\/\/shop_images\/slider-btn-bg_1eff7c6d-5195-4bb0-a53a-8721a10b7981.png"
+        }
+      },
+      "1590660304269": {
+        "type": "information-clients",
+        "blocks": {
+          "1590660308496": {
+            "type": "image",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/bg-testimonial.png",
+              "logo": "shopify:\/\/shop_images\/test-nomials.png",
+              "cus_title": "Qué opináis de Kome...",
+              "cus_desc": "Lorem ipsum dolor sit amet, consectetur \nadipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\n\n\n\n\n\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \nconsequat.",
+              "cus_title_1": "María Rodríguez"
+            }
+          },
+          "1590661226573": {
+            "type": "image",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/bg-testimonial.png",
+              "logo": "shopify:\/\/shop_images\/test-nomials.png",
+              "cus_title": "Qué opináis de Kome...",
+              "cus_desc": "Lorem ipsum dolor sit amet, consectetur \nadipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \nconsequat.",
+              "cus_title_1": "María Rodríguez"
+            }
+          }
+        },
+        "block_order": [
+          "1590660308496",
+          "1590661226573"
+        ],
+        "settings": {
+        }
+      },
+      "1590738495497": {
+        "type": "featured-blog",
+        "settings": {
+          "title": "diario de mascotas",
+          "blog": "testonomials",
+          "post_limit": 3,
+          "blog_show_author": false,
+          "blog_show_date": true,
+          "show_view_all": false
+        }
+      },
+      "1591176365820": {
+        "type": "collection",
+        "settings": {
+          "title": "nuestras recetas",
+          "collection": "all-collection",
+          "show_quantity_selector": true,
+          "show_variant_labels": false,
+          "grid": 1,
+          "rows": 5,
+          "show_vendor": false,
+          "enable_payment_button": true,
+          "show_view_all": false
+        }
+      },
+      "collection-tab": {
+        "type": "collection-tab",
+        "blocks": {
+          "1593240285277": {
+            "type": "image",
+            "settings": {
+              "cus_title": "ver todos",
+              "feature_collection": "all-collection",
+              "grid": 3,
+              "rows": 2
+            }
+          },
+          "1593240303770": {
+            "type": "image",
+            "settings": {
+              "cus_title": "perros",
+              "feature_collection": "perros",
+              "grid": 3,
+              "rows": 2
+            }
+          },
+          "1593240312586": {
+            "type": "image",
+            "settings": {
+              "cus_title": "gatos",
+              "feature_collection": "gatos",
+              "grid": 3,
+              "rows": 2
+            }
+          }
+        },
+        "block_order": [
+          "1593240285277",
+          "1593240303770",
+          "1593240312586"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "logo-bar": {
+        "type": "logo-bar",
+        "blocks": {
+          "1593422796236": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/pro-trust-1-1.png",
+              "link": ""
+            }
+          },
+          "1593422814868": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/pro-trust-2-1.png",
+              "link": ""
+            }
+          },
+          "1593422823500": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/pro-trust-3-1.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1593422796236",
+          "1593422814868",
+          "1593422823500"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "img-with-text-2": {
+        "type": "img-with-text-2",
+        "blocks": {
+          "1593425034118": {
+            "type": "image",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Untitled-2.png",
+              "button_label_1": "know more",
+              "button_link_1": "shopify:\/\/collections",
+              "bg_logo": "shopify:\/\/shop_images\/slider-btn-bg_1eff7c6d-5195-4bb0-a53a-8721a10b7981.png"
+            }
+          },
+          "1593426270262": {
+            "type": "image",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Untitled-3.png",
+              "button_label_1": "I want it",
+              "button_link_1": "shopify:\/\/collections",
+              "bg_logo": "shopify:\/\/shop_images\/slider-btn-bg_1eff7c6d-5195-4bb0-a53a-8721a10b7981.png"
+            }
+          }
+        },
+        "block_order": [
+          "1593425034118",
+          "1593426270262"
+        ],
+        "settings": {
+        }
+      },
+      "information-clients": {
+        "type": "information-clients",
+        "blocks": {
+          "1594014425749": {
+            "type": "image",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/bg-testimonial.png",
+              "logo": "shopify:\/\/shop_images\/test-nomials.png",
+              "cus_title": "Qué opináis de Kome...",
+              "cus_desc": "Lorem ipsum dolor sit amet, consectetur \nadipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\n\n\n\n\n\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \nconsequat.",
+              "cus_title_1": "María Rodríguez"
+            }
+          },
+          "1594014463309": {
+            "type": "image",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/bg-testimonial.png",
+              "logo": "shopify:\/\/shop_images\/test-nomials.png",
+              "cus_title": "Qué opináis de Kome...",
+              "cus_desc": "Lorem ipsum dolor sit amet, consectetur \nadipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\n\n\n\n\n\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \nconsequat.",
+              "cus_title_1": "María Rodríguez"
+            }
+          },
+          "1594014476900": {
+            "type": "image",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/bg-testimonial.png",
+              "logo": "shopify:\/\/shop_images\/test-nomials.png",
+              "cus_title": "Qué opináis de Kome...",
+              "cus_desc": "Lorem ipsum dolor sit amet, consectetur \nadipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\n\n\n\n\n\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \nconsequat.",
+              "cus_title_1": "María Rodríguez"
+            }
+          }
+        },
+        "block_order": [
+          "1594014425749",
+          "1594014463309",
+          "1594014476900"
+        ],
+        "settings": {
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "layout": "list",
+          "blog_show_author": true,
+          "blog_show_date": true
+        }
+      },
+      "opinion-page": {
+        "type": "opinion-page",
+        "settings": {
+          "cus_title": "Perros y gatos ya disfrutan de una alimentación 100% natural.",
+          "cus_desc": "¡Nos encantaría escuchar tu opinión!",
+          "cus_desc_sec": "Envíanos tu foto y comentarios a info@piensoskome.com"
+        }
+      },
+      "rich-text": {
+        "type": "rich-text",
+        "settings": {
+          "full_width": false,
+          "section_title": "Sílbanos y allí estaremos. O mejor, escríbenos un email a:",
+          "text": "<p>info@piensoskome.com<\/p>",
+          "text_size": "medium"
+        }
+      },
+      "know-more": {
+        "type": "know-more",
+        "blocks": {
+          "1595330003565": {
+            "type": "image",
+            "settings": {
+              "km_img_blog": "shopify:\/\/shop_images\/Martita_Small_d565cd8a-3df1-492a-8f63-1f387c6cb2cb.png",
+              "cus_title": "Junio 2020 \/ Granada",
+              "cus_desc": "Martita de Graná y KOME donan 500€ a Rescate animal Granada",
+              "cus_desc_weight": "140Kg",
+              "cus_desc_info": "La solidaridad sigue siendo la gran protagonista no solo en este confinamiento sino también durante la desescalada. En KOME somos conscientes de las dificultades que enfrentan muchas asociaciones de animales en estos meses.",
+              "button_label": "te contamos más",
+              "button_link": "shopify:\/\/pages\/know-more"
+            }
+          },
+          "1595333660053": {
+            "type": "image",
+            "settings": {
+              "km_img_blog": "shopify:\/\/shop_images\/RaulAntonSmall.png",
+              "cus_title": "Junio 2020 \/ Valencia",
+              "cus_desc": "Donación de 500€ a Modepran junto con Raúl Antón y Leo Cámara",
+              "cus_desc_weight": "140Kg",
+              "cus_desc_info": "Colaborar con las asociaciones y protectoras animales es una parte fundamental de la filosofía de KOME. Y más aún en estos tiempos donde las donaciones de los socios se hacen casi imposible.",
+              "button_label": "te contamos más",
+              "button_link": "shopify:\/\/pages\/know-more"
+            }
+          }
+        },
+        "block_order": [
+          "1595330003565",
+          "1595333660053"
+        ],
+        "settings": {
+          "title_info": "En Kome, nuestra misión es hacer hacer la vida más saludable para tu mascota, pero también para mascotas con necesidad. Por eso destinamos el 10% de nuestros beneficios a asociaciones y protectoras de animales.",
+          "cus_title_info": "Estamos orgullosos de apoyar a centros de acogida y adopción en nuestro modelo de negocio, alimentándoles con comida de calidad.",
+          "km_img_logo": "shopify:\/\/shop_images\/sello-donacion.png"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "blocks": {
+          "1600247871308": {
+            "type": "image",
+            "settings": {
+              "filter_title": "size",
+              "filter_tag": "s,m,xl,xxl"
+            }
+          },
+          "1600661504749": {
+            "type": "image",
+            "settings": {
+              "filter_title": "color",
+              "filter_tag": "black,red,white,blue"
+            }
+          },
+          "1600836063063": {
+            "type": "image",
+            "settings": {
+              "filter_title": "product type",
+              "filter_tag": "perros,gatos"
+            }
+          }
+        },
+        "block_order": [
+          "1600247871308",
+          "1600661504749",
+          "1600836063063"
+        ],
+        "settings": {
+          "layout": "grid",
+          "grid": 3,
+          "rows": 8,
+          "show_collection_image": true,
+          "show_vendor": false,
+          "sort_enable": true,
+          "tags_enable": true
+        }
+      },
+      "contact-page-sec": {
+        "type": "contact-page-sec",
+        "settings": {
+          "bg_logo": "shopify:\/\/shop_images\/contact-img.png",
+          "img_logo": "shopify:\/\/shop_images\/textos-icon.png",
+          "home_welcome_message": "Conoce nuestros\npuntos de distribución",
+          "button_label_1": "Ver puntos de venta",
+          "button_link_1": "shopify:\/\/pages\/contact",
+          "bg_btn_logo": "shopify:\/\/shop_images\/cta-btn-bg.png"
+        }
+      },
+      "page-compare": {
+        "type": "page-compare",
+        "blocks": {
+          "1595498381584": {
+            "type": "block",
+            "settings": {
+              "ccs_heading": "Mascota Planet",
+              "ccs_disc": "<p>Pablo Ruiz Picasso, edif. Maestranza, local 1San Pedro de Alc&aacute;ntara (M&aacute;laga)&nbsp;Andalucia&nbsp;29670&nbsp;Spain<\/p>",
+              "ccs_cus_img": "shopify:\/\/shop_images\/scasl_1565952271macota-planetstore-locator_compact_1.jpg"
+            }
+          },
+          "1595498507351": {
+            "type": "block",
+            "settings": {
+              "ccs_heading": "Lilo & Rumba",
+              "ccs_disc": "<p>Calle Fajardo, 6, 29005 M&aacute;lagaM&aacute;laga Andalucia 29008 Spain<\/p>\n<p><\/p>",
+              "ccs_cus_img": "shopify:\/\/shop_images\/scasl_1562835031lilorumba_compact_a553e3c4-35fe-4315-ad31-aa5066e8f0db.jpg"
+            }
+          },
+          "1595498539848": {
+            "type": "block",
+            "settings": {
+              "ccs_heading": "Peluquería Canina Chabelana",
+              "ccs_disc": "<p>C\/ Sevilla, 14El Ejido (Almer&iacute;a) Andalucia 04700 Spain<\/p>",
+              "ccs_cus_img": "shopify:\/\/shop_images\/scasl_1565952284chabelanastore-locator_compact_e4b0ddc9-8857-48bc-be3e-416e3143119c.jpg"
+            }
+          },
+          "1595498677976": {
+            "type": "block",
+            "settings": {
+              "ccs_heading": "Stopy Mascotas",
+              "ccs_disc": "<p>Av. de Cervantes, 22Granada Andalucia 18008 Spain<\/p>",
+              "ccs_cus_img": "shopify:\/\/shop_images\/scasl_1566388854stopystore-locator_compact_ac81f559-1b9e-4623-8190-fabb0a725db1.jpg"
+            }
+          },
+          "1595498715295": {
+            "type": "block",
+            "settings": {
+              "ccs_heading": "Mascota Planet (Marbella)",
+              "ccs_disc": "<p>C\/ Yunque n&ordm;20; P.I. La ErmitaMarbella (M&aacute;laga) Andalucia 29601 Spain<\/p>",
+              "ccs_cus_img": "shopify:\/\/shop_images\/scasl_1565952271macota-planetstore-locator_compact_1.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1595498381584",
+          "1595498507351",
+          "1595498539848",
+          "1595498677976",
+          "1595498715295"
+        ],
+        "settings": {
+          "ccs_main_heading": ""
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": 3
+        }
+      },
+      "tabbing-secction-block": {
+        "type": "tabbing-secction-block",
+        "blocks": {
+          "1603082035825": {
+            "type": "image",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/scasl_1566388854stopystore-locator_compact_ac81f559-1b9e-4623-8190-fabb0a725db1.jpg",
+              "block_title": "Leg",
+              "block_desc": "adsasasd"
+            }
+          },
+          "1603083092953": {
+            "type": "image",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/scasl_1562835031lilorumba_compact_a553e3c4-35fe-4315-ad31-aa5066e8f0db.jpg",
+              "block_title": "Underarm",
+              "block_desc": "ffsa"
+            }
+          },
+          "1603083115127": {
+            "type": "image",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/scasl_1566388854stopystore-locator_compact_ac81f559-1b9e-4623-8190-fabb0a725db1.jpg",
+              "block_title": "Arm",
+              "block_desc": "arm"
+            }
+          },
+          "1603083128184": {
+            "type": "image",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/scasl_1562835031lilorumba_compact_a553e3c4-35fe-4315-ad31-aa5066e8f0db.jpg",
+              "block_title": "Face",
+              "block_desc": "Face asasas"
+            }
+          },
+          "1603083143632": {
+            "type": "image",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/scasl_1566388854stopystore-locator_compact_ac81f559-1b9e-4623-8190-fabb0a725db1.jpg",
+              "block_title": "Other",
+              "block_desc": "Other asdfg"
+            }
+          },
+          "1d6fe048-48fd-4f03-baad-80db210dd3f7": {
+            "type": "image",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/pro-trust-2-1.png",
+              "block_title": "Leg",
+              "block_desc": "poiuytrewq"
+            }
+          },
+          "c3b12732-6f4d-41df-944c-b73bb82246ad": {
+            "type": "image",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/scasl_1565952284chabelanastore-locator_compact_e4b0ddc9-8857-48bc-be3e-416e3143119c.jpg",
+              "block_title": "Other",
+              "block_desc": "hhghhhh"
+            }
+          }
+        },
+        "block_order": [
+          "1603082035825",
+          "1603083092953",
+          "1603083115127",
+          "1603083128184",
+          "1603083143632",
+          "1d6fe048-48fd-4f03-baad-80db210dd3f7",
+          "c3b12732-6f4d-41df-944c-b73bb82246ad"
+        ],
+        "settings": {
+          "cus_title1": "Leg",
+          "cus_title2": "Underarm",
+          "cus_title3": "Arm",
+          "cus_title4": "Face",
+          "cus_title5": "Other",
+          "cus_title6": "Show all"
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_ajax_enable": true,
+          "cart_notes_enable": false
+        }
+      },
+      "16050685015f61ae62": {
+        "type": "accordian",
+        "blocks": {
+          "3b5bcfad-c884-453b-bd64-8f9a26b89931": {
+            "type": "accordian",
+            "settings": {
+              "cus_title": "What is Lorem Ipsum?",
+              "cus_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            }
+          },
+          "d6d52fc8-9bc0-478b-a619-c20b949821e7": {
+            "type": "accordian",
+            "settings": {
+              "cus_title": "Where does it come from?",
+              "cus_desc": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32."
+            }
+          },
+          "cdc9e15d-3ae5-41f0-9a7f-eb2d651451e1": {
+            "type": "accordian",
+            "settings": {
+              "cus_title": "Where can I get some?",
+              "cus_desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."
+            }
+          },
+          "66229f6e-167f-441c-bcb5-4913bcce0101": {
+            "type": "accordian",
+            "settings": {
+              "cus_title": "Why do we use it?",
+              "cus_desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+            }
+          }
+        },
+        "block_order": [
+          "3b5bcfad-c884-453b-bd64-8f9a26b89931",
+          "d6d52fc8-9bc0-478b-a619-c20b949821e7",
+          "cdc9e15d-3ae5-41f0-9a7f-eb2d651451e1",
+          "66229f6e-167f-441c-bcb5-4913bcce0101"
+        ],
+        "settings": {
+          "main_title": "detalles adicionales"
+        }
+      },
+      "16062224913e2bfcb7": {
+        "type": "image-with-text-2",
+        "blocks": {
+          "cd2cd539-0325-4ee0-8fe7-eaf1d7d10116": {
+            "type": "image-and-text",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/Mask_Group_51_2x_132bfb05-a08b-4a7d-91b5-57adf59c7c12.png",
+              "svg_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0298\/4411\/1420\/files\/Union_24.svg?v=1606222716",
+              "cus_title": "Licensed Guide Interpreters",
+              "cus_desc": "“The National Licensed Guide Interpreters” are those who have passed the national exam, have advanced foreign language skills, high-level knowledge related to tourism -history, geography and culture of Japan."
+            }
+          },
+          "58c05a1e-5176-440d-99df-2ea0bae44e8e": {
+            "type": "image-and-text",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/Mask_Group44_2x_ddb0acdb-23bd-491f-8687-3a3fa69e2fa5.png",
+              "svg_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0298\/4411\/1420\/files\/Union_25.svg?v=1606222719",
+              "cus_title": "Nature \/ Trekking Guides",
+              "cus_desc": "“The Japan Mountain Guides Association” aims to be abreast advanced guiding methods for the entertainment and safety of our clients, and train individual guides and applicants to issue Official Certificates according to their qualifications."
+            }
+          },
+          "2a19a135-ee5f-48d2-8ef7-d4943d4ffab8": {
+            "type": "image-and-text",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/Mask_Group_33_2x_645af9f8-0867-496a-86ca-0b6389d39660.png",
+              "svg_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0298\/4411\/1420\/files\/Exclusion_1.svg?v=1606222708",
+              "cus_title": "Wilderness First Aid",
+              "cus_desc": "WFA is an internationally acknowledged medical concept and basic life support skills for the outdoor enthusiast on day trips or short adventures. The course is taught by professional instructors with significant-patient-care and backcountry experience."
+            }
+          },
+          "57cd8a6a-251e-4260-96dc-af0762b5ee5f": {
+            "type": "image-and-text",
+            "settings": {
+              "logo_img": "shopify:\/\/shop_images\/Mask_Group_74_2x_be836605-0963-48e4-93f7-ce3cc22930e0.png",
+              "svg_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0298\/4411\/1420\/files\/Path_21966.svg?v=1606222711",
+              "cus_title": "Adventure Travel Trade Association",
+              "cus_desc": "Explore Hakone is a member of ATTA, a vital leadership voice and partner for the adventure travel industry around the world. The ATTA’s purpose is to nurture and professionalize the responsible and sustainable development of the adventure travel industry."
+            }
+          }
+        },
+        "block_order": [
+          "cd2cd539-0325-4ee0-8fe7-eaf1d7d10116",
+          "58c05a1e-5176-440d-99df-2ea0bae44e8e",
+          "2a19a135-ee5f-48d2-8ef7-d4943d4ffab8",
+          "57cd8a6a-251e-4260-96dc-af0762b5ee5f"
+        ],
+        "settings": {
+          "special_title": "OUR SPECIALITY",
+          "special_desc": "Explore Hakone consists of specialists with extensive knowledge of the area and who are highly trained as guides. \nYou can expect only the best experience."
+        }
+      },
+      "1606287193bb00d8f4": {
+        "type": "explore-info",
+        "settings": {
+          "main_title": "Corporate Social Responsibility",
+          "main_desc": "FOR SUSTAINABLE TRAVEL",
+          "logo": "shopify:\/\/shop_images\/Mask_Group_63_2x_68c9d188-4aa8-4e01-9dc7-141a23f3c5f0.png",
+          "image_title": "Our Mission",
+          "image_desc": "Our mission is to contribute to the sustainable development of local communities\nand the tourism industry through responsible, authentic and creative business.",
+          "image_desc2": "Travelife is the GSTC Accredited and globally leading training, management & certification programme for sustainability in tourism, with the largest network of tour operators and travel agents worldwide. \nWe are a member of Travelife and we have started the process of working step by step towards complying with the International Sustainability Standards.",
+          "image": "shopify:\/\/shop_images\/logo_2x_df9e66c5-b601-4dff-a5f0-50204d8f082a.png",
+          "policy_title": "OUR SUSTAINABILITY POLICY",
+          "policy_link_title": "Please find our full policy here.",
+          "svg_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0298\/4411\/1420\/files\/Path_16041.svg?v=1606288420",
+          "policy_url": "#",
+          "environment_title": "TO PROTECT OUR ENVIRONMENT",
+          "environment_desc": "1% of the profit generated from Explore Hakone’s tours will be donated to Hakone town’s Nature Conservation Trust. This trust thrives to support the purchase of specially-appointed conservation land within the National Park, the preservation of buildings of historical and cultural value, and the prevention of deforestation of special wet-land, together with other conservation efforts.",
+          "image_2": "shopify:\/\/shop_images\/image-2.png"
+        }
+      },
+      "1627626178f873d7db": {
+        "type": "testimonial-with-image",
+        "blocks": {
+          "1627626178f873d7db-0": {
+            "type": "quote",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Mask_Group_63_2x_68c9d188-4aa8-4e01-9dc7-141a23f3c5f0.png",
+              "review_text": "",
+              "author_name": "Author's name",
+              "url": "#",
+              "background_color": "#ffffff"
+            }
+          },
+          "1627626178f873d7db-1": {
+            "type": "quote",
+            "settings": {
+              "review_text": "",
+              "author_name": "Author's name",
+              "url": "",
+              "background_color": "#ffffff"
+            }
+          },
+          "1627626178f873d7db-2": {
+            "type": "quote",
+            "settings": {
+              "review_text": "",
+              "author_name": "Author's name",
+              "url": "",
+              "background_color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "1627626178f873d7db-0",
+          "1627626178f873d7db-1",
+          "1627626178f873d7db-2"
+        ],
+        "settings": {
+          "title": "Testimonials"
+        }
+      },
+      "1637123803443781ef": {
+        "type": "3d-chart-bar",
+        "settings": {
+        }
+      },
+      "1637125084c4338b23": {
+        "type": "3d-chart-bar-2",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+      "1637125084c4338b23",
+      "1590222101981",
+      "1590228852807",
+      "1591176365820",
+      "1590636970099",
+      "1590640551667",
+      "1590660304269",
+      "1590738495497",
+      "16050685015f61ae62",
+      "16062224913e2bfcb7",
+      "1606287193bb00d8f4",
+      "1627626178f873d7db",
+      "1637123803443781ef"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+          }
+        },
+        "hero-1": {
+          "type": "hero",
+          "settings": {
+            "hero_size": "large",
+            "text_size": "large"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {
+          }
+        },
+        "feature-columns": {
+          "type": "feature-columns",
+          "blocks": {
+            "feature-columns-0": {
+              "type": "text_block",
+              "settings": {
+              }
+            },
+            "feature-columns-1": {
+              "type": "text_block",
+              "settings": {
+              }
+            },
+            "feature-columns-2": {
+              "type": "text_block",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "feature-columns-0",
+            "feature-columns-1",
+            "feature-columns-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "grid": 4
+          }
+        },
+        "hero-2": {
+          "type": "hero",
+          "settings": {
+            "text_size": "large"
+          }
+        },
+        "quotes": {
+          "type": "quotes",
+          "blocks": {
+            "quotes-0": {
+              "type": "quote",
+              "settings": {
+              }
+            },
+            "quotes-1": {
+              "type": "quote",
+              "settings": {
+              }
+            },
+            "quotes-2": {
+              "type": "quote",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "quotes-0",
+            "quotes-1",
+            "quotes-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2"
+          ],
+          "settings": {
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "footer-1": {
+              "type": "newsletter",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1"
+          ],
+          "settings": {
+            "show_payment_icons": true
+          }
+        }
+      },
+      "content_for_index": [
+        "hero-1",
+        "feature-row",
+        "feature-columns",
+        "collection",
+        "hero-2",
+        "quotes",
+        "image-bar"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "type_header_font": "muli_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "muli_n4",
+      "type_base_size": 18,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "align_logo": "left",
+            "logo": "",
+            "logo_max_width": 135,
+            "main_linklist": "main-menu",
+            "message": true,
+            "color_bg": "#162950",
+            "color_text": "#ffffff"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "alignment": "center",
+            "hero_size": "x-large",
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center center"
+              }
+            },
+            "1492095993817": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "1492095993817"
+          ],
+          "settings": {
+            "slideshow_height": "medium",
+            "text_size": "medium",
+            "autorotate": false,
+            "autorotate_speed": 5
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "grid": 3,
+            "rows": 1,
+            "show_vendor": true,
+            "show_view_all": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_variant_labels": true,
+            "show_vendor": false,
+            "show_share_buttons": true,
+            "media_size": "medium",
+            "enable_image_zoom": true,
+            "enable_video_looping": false
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "layout": "grid",
+            "grid": 2,
+            "rows": 2,
+            "show_collection_image": true,
+            "show_vendor": false,
+            "sort_enable": true,
+            "tags_enable": true
+          }
+        },
+        "1492033809691": {
+          "type": "map",
+          "settings": {
+          }
+        },
+        "1492033877875": {
+          "type": "quotes",
+          "blocks": {
+            "1492033877875-0": {
+              "type": "quote",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1492033877875-0"
+          ],
+          "settings": {
+          }
+        },
+        "1492033924902": {
+          "type": "custom-content",
+          "blocks": {
+            "1492033924902-0": {
+              "type": "text",
+              "settings": {
+                "width": "100%",
+                "alignment": "center",
+                "align_text": "center"
+              }
+            }
+          },
+          "block_order": [
+            "1492033924902-0"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "1492096252560": {
+          "type": "collection-list",
+          "blocks": {
+            "1492096252560-0": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            },
+            "1492096252560-1": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            },
+            "1492096252560-2": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1492096252560-0",
+            "1492096252560-1",
+            "1492096252560-2"
+          ],
+          "settings": {
+            "grid": 3
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "layout": "grid",
+            "blog_show_author": true,
+            "blog_show_date": false
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_author": true,
+            "blog_show_date": true,
+            "show_share_buttons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_notes_enable": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+              }
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "link_list",
+            "text",
+            "newsletter"
+          ],
+          "settings": {
+            "color_footer_bg": "#f8f8f8",
+            "color_footer_text": "#6d6d6d"
+          }
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "slideshow",
+        "1492033924902",
+        "1492096252560",
+        "1492033877875",
+        "1492033809691"
+      ]
+    }
+  }
+}

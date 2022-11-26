@@ -1,0 +1,96 @@
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2>{{ section.settings.title | escape }}</h2>
+    </div>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <div class="quotes-wrapper">
+      <div class="testimonial-reviews" id="testimonial">
+        {% for block in section.blocks %}
+        <a href="{{block.settings.url}}" style="background-color:{{block.settings.background_color}};">
+          <div class="testimonial-detail">
+            {% if block.settings.image != blank %}
+            <img src="{{ block.settings.image | img_url: 'master' }}" />
+            {% endif %}
+            <blockquote class="testimonial-detail-text">
+
+              {% if block.settings.review_text != blank %}
+              <div class="testimonial-detail-information">{{ block.settings.review_text }}</div>
+              {% endif %}
+
+            </blockquote>
+
+
+            {% if block.settings.author_name != blank %}
+            <h2 class="testimonial-name-author">{{ block.settings.author_name | escape }}</h2>
+            {% endif %}
+
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if section.blocks.size == 0 %}
+  <div class="no-content-available">
+    no content available please add in customize
+  </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Testimonial",
+      "settings": [
+		{
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },        
+		{
+          "type": "richtext",
+          "id": "review_text",
+          "label": "Add Review Text"
+        },
+		{
+          "type": "text",
+          "id": "author_name",
+          "label": "Author"
+        },
+        {
+		  "type": "url",
+          "id": "url",
+          "label": "Enter Url"
+        },
+		{
+		  "type": "color",
+          "id": "background_color",
+          "label": "Enter background color",
+		  "default": "#ffffff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

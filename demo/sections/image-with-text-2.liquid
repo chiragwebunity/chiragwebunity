@@ -1,0 +1,174 @@
+<div class="container">
+  <div class="our-speciality-section">
+	<div class="main-heading-speciality">
+      {% if section.settings.special_title != blank %}
+      <p class="heading-speciality">{{section.settings.special_title}}</p>
+      {% endif %}
+      {% if section.settings.special_desc != blank %}
+      <p class="desciption-speciality">{{section.settings.special_desc}}</p>
+      {% endif %}
+    </div>
+    <div class="our-speciality-desciption">
+      {% for block in section.blocks %}
+      <div class="image-text-speciality">
+        <div class="image-of-icon-speciality">
+          {% if block.settings.logo_img != blank %}
+          <img src="{{block.settings.logo_img | img_url:'200x120' }}" alt="photo" />
+          {% endif%}
+        </div>
+        <div class="explore-desciption-ttext">
+          <div class="svg-icon-with-text-twq">
+            {% if block.settings.svg_icon != blank %}
+			<img src="{{block.settings.svg_icon}}" alt="photo" />
+            {% endif %}
+            {% if block.settings.cus_title != blank %}
+            <p class="svg-icon-with-heading">{{block.settings.cus_title}}</p>
+            {% endif %}
+          </div>
+          <div class="explore-desciption-below">
+            {% if block.settings.cus_desc != blank %}
+            <p class="svg-below-description">{{block.settings.cus_desc}}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<style>
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .our-speciality-section {
+    padding: 0 50px;
+    padding-top: 175px;
+  }
+  .cus-icon-with-text {
+    padding: 0px 50px;
+  }
+  .main-heading-speciality {
+    text-align: center;
+  }
+  .main-heading-speciality p.desciption-speciality {
+    font-size: 16px;
+    max-width: 810px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    line-height: 30px;
+  }
+  }
+  .main-heading-speciality p.heading-speciality {
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+  .main-heading-speciality p.heading-speciality {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .image-text-speciality {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 80px 0;
+    border-top: 1px solid #e0e4e7;
+  }
+  .image-of-icon-speciality {
+    flex: 0 0 20%;
+    max-width: 20%;
+    text-align: center;
+  }
+  .explore-desciption-ttext {
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+  .svg-icon-with-text-twq {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .svg-icon-with-text-twq img {
+  	padding-right: 20px;
+  }
+  .svg-icon-with-text-twq p.svg-icon-with-heading {
+  	font-size: 30px;
+    text-transform: uppercase;
+  }
+  .image-text-speciality:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .explore-desciption-below p.svg-below-description {
+    font-size: 16px;
+  }
+  .image-text-speciality:nth-child(even) .image-of-icon-speciality {
+    text-align: right;
+  }
+</style>
+
+
+
+
+{% schema %}
+{
+   "name":"image with text",
+   "settings":[
+			{
+               "type":"text",
+               "id":"special_title",
+               "label":"Title"
+            },
+            {
+               "type":"textarea",
+               "id":"special_desc",
+               "label":"Description"
+            }
+   ],
+   "blocks":[
+      {
+         "type":"image-and-text",
+         "name":"image and text",
+         "settings":[
+            {
+                "type": "image_picker",
+                "id": "logo_img",
+                "label": "Logo image"
+            },
+            {
+                "type": "text",
+                "id": "svg_icon",
+                "label": "image link"
+            },
+            {
+               "type":"text",
+               "id":"cus_title",
+               "label":"Title"
+            },
+            {
+               "type":"textarea",
+               "id":"cus_desc",
+               "label":"Description"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":{
+            "en":"image with text direction"
+         },
+         "category":{
+            "en":"image with text"
+         }
+      }
+   ]
+}
+{% endschema %}

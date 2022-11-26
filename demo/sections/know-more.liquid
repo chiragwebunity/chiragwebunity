@@ -1,0 +1,167 @@
+<div class="page-width">
+  
+  <div class="know-more-title">
+    {% if section.settings.title_info != blank %}
+    	<p>{{section.settings.title_info}}</p>
+    {% endif %}
+    {% if section.settings.title_info != blank %}
+    	<p>{{section.settings.cus_title_info}}</p>
+    {% endif %}
+  </div>
+  
+  
+   
+  
+  <div class="km-img-logo">
+    {% if section.settings.km_img_logo != blank %}
+    	<img src="{{section.settings.km_img_logo| img_url: 'master'  }}" alt="logo" />
+    {% endif %}
+  </div>
+  
+  {%- for block in section.blocks -%}
+  
+  <div class="km-img-text">
+    <div class="img-info-blog">
+        {% if block.settings.km_img_blog != blank %}
+        		<img src="{{block.settings.km_img_blog| img_url: 'master'  }}" alt="blog" />
+        {% endif %}
+    </div>
+    <div class="after-before-img">
+        		<img src="{{'brola-select.png'| asset_img_url: 'master'  }}"  />
+    </div>
+    <div class="info-div-of-km">
+          {% if block.settings.cus_title != blank %}
+          		<h2>{{block.settings.cus_title}}</h2>
+          {% endif %}
+          {% if block.settings.cus_desc != blank %}
+          		<h1>{{block.settings.cus_desc}}</h1>
+          {% endif %}
+          {% if block.settings.cus_desc_weight != blank %}
+         		 <p class="weight-of-animal">{{block.settings.cus_desc_weight}}</p>
+          {% endif %}
+          {% if block.settings.cus_desc_info != blank %}
+         		 <p>{{block.settings.cus_desc_info}}</p>
+          {% endif %}
+          <a href="{{ block.settings.button_link }}" class="btn-blog-info">
+            {{ block.settings.button_label }}
+          </a>
+    </div>
+  </div>
+  
+  {% endfor %}
+  
+</div>
+
+{% schema %}
+{
+   "name":"know more",
+   "settings":[
+    {
+        "type": "textarea",
+        "id": "title_info",
+        "label": "Welcome message"
+    },
+    {
+        "type": "textarea",
+        "id": "cus_title_info",
+        "label": "Welcome message"
+    },
+  	{
+        "type": "image_picker",
+        "id": "km_img_logo",
+        "label": "Logo image"
+   	}
+   ],
+	"blocks":[
+      {
+         "type":"image",
+         "name":"block",
+         "settings":[
+			{
+                "type": "image_picker",
+                "id": "km_img_blog",
+                "label": "Logo image"
+            },
+            {
+               "type":"text",
+               "id":"cus_title",
+               "label":"Title"
+            },
+            {
+               "type":"textarea",
+               "id":"cus_desc",
+               "label":"Description"
+            },
+			{
+               "type":"textarea",
+               "id":"cus_desc_weight",
+               "label":"Description"
+            },
+			{
+               "type":"textarea",
+               "id":"cus_desc_info",
+               "label":"Description"
+            },
+			{
+                "type": "text",
+                "id": "button_label",
+                "label": {
+                  "da": "Knaptekst",
+                  "de": "Button-Name",
+                  "en": "Button label",
+                  "es": "Etiqueta de botón",
+                  "fi": "Tekstipainike",
+                  "fr": "Texte du bouton",
+                  "hi": "बटन लेबल",
+                  "it": "Etichetta pulsante",
+                  "ja": "ボタンのラベル",
+                  "ko": "버튼 레이블",
+                  "nb": "Knappetikett",
+                  "nl": "Knoplabel",
+                  "pt-BR": "Etiqueta de botão",
+                  "pt-PT": "Etiqueta do botão",
+                  "sv": "Knappetikett",
+                  "th": "ป้ายกำกับปุ่ม",
+                  "zh-CN": "按钮标签",
+                  "zh-TW": "按鈕標籤"
+                }
+              },
+              {
+                "type": "url",
+                "id": "button_link",
+                "label": {
+                  "da": "Knaplink",
+                  "de": "Button-Link",
+                  "en": "Button link",
+                  "es": "Enlace de la diapositiva",
+                  "fi": "Painikelinkki",
+                  "fr": "Lien du bouton",
+                  "hi": "बटन लिंक",
+                  "it": "Link slide",
+                  "ja": "ボタンのリンク",
+                  "ko": "버튼 링크",
+                  "nb": "Kobling for knapp",
+                  "nl": "Knoplink",
+                  "pt-BR": "Link do slide",
+                  "pt-PT": "Ligação do botão",
+                  "sv": "Knapplänk",
+                  "th": "ลิงก์ปุ่ม",
+                  "zh-CN": "按钮链接",
+                  "zh-TW": "按鈕連結"
+                }
+              }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":{
+            "en":"know more"
+         },
+         "category":{
+            "en":"know more"
+         }
+      }
+   ]
+}
+{% endschema %}

@@ -1,0 +1,488 @@
+<div id="mini-cart" class="hc-cartDrawer">
+  <div class="ajaxcart-header">
+  <h4>Cart <span class="hc-items-count">{{cart.item_count }}</span> item(s) in your cart</h4>
+  <span class="hc-close" aria-hidden="true">&times;</span>
+  </div>
+
+  <form action="/cart" method="post" novalidate class="cart">
+
+    <div class="hc-append"></div>
+
+    <table class="hc-mini-table">
+      {% for item in cart.items %}
+      <tr class="item-details" data-id="{{ item.id }}">
+        <td class="td-image">
+          <img src="{{ item | img_url: 'x100' }}" />
+        </td>
+        <td class="mini-cart-info">
+          <div class="mini_cart_title_price">
+            <div>{{ item.title }}</div>
+            
+            <span class="item-price" >{{item.line_price | money }}</span>
+            
+          </div>
+          <span class="quantity-box">
+            <a href class="minus-quantity">&minus;</a>
+            <input type="text" class="quantity-input" value="{{item.quantity}}">
+            <a href class="plus-quantity">&plus;</a>
+          </span>
+          <a class="hc-remove" href="">Remove</a>
+        </td>
+      </tr>  
+      {% endfor %}
+    </table>
+
+    <div class="hc-buttons action buttons">
+      <div class="subtotal">
+        <strong class="float-left">Subtotal </strong>
+        <strong class="amount">{{ cart.total_price | money }}</strong>
+      </div>
+
+      <a href="/cart" rel="nofollow" class="cart-grey-btn">View Cart</a>
+      <a class="checkout" href="/checkout" rel="nofollow">Checkout</a>
+
+      <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+    </div>
+
+  </form>
+</div>
+
+<div class="custom-overlay" ></div>
+
+<style>
+ 
+  #mini-cart .additional-checkout-button+.additional-checkout-button, #mini-cart .additional-checkout-button--google-pay {
+    width: 100% !important;
+    margin-left: 0;
+  }
+  #mini-cart form.cart {
+    height: calc(100vh - 320px);
+    overflow-y: scroll;
+    padding: 0 22px;
+  }
+  #mini-cart .ajaxcart-header h4, #mini-cart .subtotal strong.text-sub-total {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #1f1f1f;
+    text-transform: capitalize;
+    margin: 0;
+  }
+  #mini-cart .subtotal strong.amount span.money {
+    font-size: 15px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: right;
+    color: #1f1f1f;
+  }
+  body {
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+  }
+  body.active_slide_cart {
+    position: static;
+    overflow: hidden !important;
+  }
+  
+
+  #mini-cart {
+    width: 475px;
+    position: fixed;
+    top: 0;
+    z-index: 21474836451;
+    background: #fff;
+    color: #000;
+    display: block;
+    height: 100%;
+    right: -500px;
+    bottom: 0;
+  }
+  .ajaxcart-header {
+    margin: 20px 0;
+    padding: 0 22px;
+  }
+  .active_slide_cart #mini-cart {
+    -ms-transform: translate(-500px, 0px); /* IE 9 */
+    -webkit-transform: translate(-500px, 0px); /* Safari */
+    transform: translate(-500px, 0px);
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+  }
+  #mini-cart .count, #mini-cart .subtotal, #mini-cart .buttons {
+    padding: 10px;
+  }
+  #mini-cart .subtotal {
+    text-align: right;
+    margin: 0px 30px;
+    padding-top: 20px;
+  }
+  #mini-cart .subtotal .amount {
+    display: inline-block;
+    padding: 0px;
+  }
+  #mini-cart table tr, #mini-cart .count {
+    border-bottom: 1px solid #e0bfb0;
+  }
+  #mini-cart table tr {
+    padding: 20px 0;
+    display: block;
+  }
+  #mini-cart table td {
+    border: none;
+    padding: 0px;
+    vertical-align: top;
+  }
+  #mini-cart table td {
+    padding-left: 20px;
+  }
+  #mini-cart a {
+    padding: 5px;
+  }
+  #mini-cart .hc-mini-table {
+    display: block;
+    margin-top: 0;
+  }
+  #mini-cart .action.buttons a {
+    padding: 16px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    background: #666;
+  }
+  
+  #mini-cart .action.buttons a.checkout {
+    background: #000;
+  }
+  
+  .cart-grey-btn {
+    background: #666;
+    color: #fff;
+  }
+  #mini-cart a.checkout {
+    float: right;
+    background: #000;
+    color: #fff;
+  }
+  #mini-cart .item-price {
+    margin-top: 10px;
+    display: block;
+  }
+  .custom-overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+  .action.buttons {
+    overflow: hidden;
+    position: absolute;
+    width: 95%;
+    bottom: 0;
+    text-transform: uppercase;
+  }
+  #mini-cart .action.buttons a:hover {
+    opacity: .9;
+    color: #fff;
+  }
+  .float-left {
+    float: left;
+  }
+  .hc-close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 21px;
+    text-align: center;
+  }
+  .td-image {
+    width: 90px;
+    height: 140px;
+  }
+  #mini-cart a {
+    padding: 3px 13px;
+    text-decoration: none;
+    display: inline-block;
+  }
+/*   span.quantity-box {
+    display: inline-block;
+    background-color: #f3ebe2;
+  } */
+  span.quantity-box {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid #000;
+}
+  input.quantity-input {
+    width: 30px;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    border: none;
+    margin: 0;
+  }
+  #mini-cart a.hc-remove {
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0px 5px;
+  }
+  .mini_cart_title_price {
+    display: block;
+    width: 100%;
+    clear: both;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .mini_cart_title_price div {
+    display: inline-block;
+  }
+  td.td-image img {
+/*     height: 100%; */
+    width: initial;
+  }
+#mini-cart a.minus-quantity {
+    border-right: 1px solid #000 !important;
+}
+#mini-cart a.plus-quantity {
+    border-left: 1px solid #000 !important;
+}
+#mini-cart .hc-buttons.action.buttons {
+    z-index: 999999;
+    left: 0;
+    width: calc(100% - 44px);
+    padding: 0;
+    background-color: transparent;
+    margin: 0 auto;
+    margin-right: 22px;
+    margin-left: 22px;
+    border-top: 1px solid #e0bfb0;
+}
+  .branding-text p {
+    max-width: 285px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1f1f1f;
+    text-transform: capitalize;
+  }
+  .branding-text p span {
+    font-weight: 600;
+  }
+  #mini-cart .action.buttons a.checkout {
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #ffffff;
+    padding: 13.5px;
+  }
+  #mini-cart table td.td-image {
+    padding-left: 0;
+  }
+  .mini_cart_title_price .title {
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    color: #1f1f1f;
+    text-transform: uppercase;
+  }
+  #mini-cart .item-price span.money,
+  #mini-cart span.variant-title {
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: #1f1f1f;
+  }
+  #mini-cart .item-price span.money {
+    margin-top: 10px;
+    font-weight: 600 !important;
+    display: block;
+  }
+  #mini-cart span.variant-title {
+    margin-bottom: 10px;
+  }
+  div#mini-cart.mini-cart-popup {
+    display: none;
+  }
+  .mini_cart_trigger  {
+    padding: 11px;
+  }
+  div#mini-cart.mini-cart-popup {
+    right: 0;
+    height: initial;
+    top: 40px;
+    width: 360px;
+    bottom: initial;
+    left: initial;
+    position: absolute;
+  }
+  div#mini-cart.mini-cart-popup .hc-append {
+    max-height: initial;
+    overflow-x: hidden;
+  }
+  div#mini-cart.mini-cart-popup td.td-image img {
+    max-height: initial;
+    height: initial;
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  div#mini-cart.mini-cart-popup .mini_cart_title_price {
+    font-size: 14px;
+  }
+  .mini_cart_trigger:hover + div#mini-cart.mini-cart-popup,
+  div#mini-cart.mini-cart-popup:hover {
+    display: block !important; /* Overwriting js script */
+  }
+  div#mini-cart.mini-cart-popup table td {
+    vertical-align: middle;
+  }
+  .mini_cart_title_price .variant-title {
+    width: 100%;
+    display: block;
+  }
+  span.quantity-box a,.hc-remove {
+    border: none;
+}
+.hc-cartDrawer .additional-checkout-buttons {
+    display: none;
+}
+@media(max-width: 480px){  
+#mini-cart {
+    width: 100%;
+    max-width: 90%;
+}  
+}  
+</style>
+
+<script>
+  
+  $(function() {
+
+    $(document).on('click','.slide_out_cart_trigger, .custom-overlay',function(event) {
+      event.preventDefault();
+      $(".custom-overlay").hide();
+      jQuery('body').toggleClass('active_slide_cart');
+    });
+    $(document).on('click','.hc-close',function() {
+      $(".custom-overlay").hide();
+      jQuery('body').removeClass('active_slide_cart');
+    });
+    $(document).on('click','.site-header__cart',function() {
+      $(".custom-overlay").show();
+      jQuery('body').addClass('active_slide_cart');
+    });
+    $(document).on('click', '.plus-quantity',function(e){
+      e.preventDefault();
+      var $input = $(this).siblings('.quantity-input');
+      var newValue = parseInt($input.val()) + 1;
+      $input.val(newValue).trigger('change');
+      min_cart();
+      return false;
+    });
+    $(document).on('click', '.minus-quantity',function(e){
+      e.preventDefault();
+      var $input = $(this).siblings('.quantity-input');
+      var newValue = parseInt($input.val()) - 1;
+      $input.val(newValue).trigger('change');
+      min_cart();
+      return false;
+    });
+    $(document).on('click', '.hc-remove',function(e){
+      e.preventDefault();
+      var $input = $(this).prev('.quantity-box').find('.quantity-input');
+      $input.val("0").trigger('change');
+      min_cart();
+      return false;
+    });
+    $(document).on('change', '.quantity-input', function() {
+      var $update = {};
+      $update[$(this).closest('.item-details').data('id')] = parseInt($(this).val());
+      $.ajax({
+        method: 'POST',
+        datatype: 'json',
+        data: { updates: $update },
+        url: '/cart/update.js',
+        success: function(){
+          min_cart();
+        },
+        error: function(message){
+          if (message['status'] == 200) {
+            $.getJSON('/cart.js', function(cart) {
+              var size = cart.item_count;
+              $('.hc-items-count').text(size);
+              $('.hc-mini-table').remove();
+              $('.amount').html(Shopify.formatMoney(cart.total_price, theme.moneyFormat));
+              $('.hc-append').append('<table class="hc-mini-table">');           
+              $(cart.items).each(function(index, item) {
+                $('.hc-mini-table').append('<tr class="item-details" data-id="'+item.id+'"><td class="td-image"><img src="' + item.image + '" /></td><td><div class="mini_cart_title_price"><div><div class="title">' + item.product_title + '</div></div><span class="item-price">' + Shopify.formatMoney(item.price, theme.moneyFormat) + '</span><span class="variant-title">' + item.variant_title + '</span></div><span class="quantity-box"><a href class="minus-quantity">&minus;</a><input type="text" class="quantity-input" value="' + item.quantity + '"><a href class="plus-quantity">&plus;</a></span><a class="hc-remove" href="">Remove</a></td></tr>');
+              });
+              $('.hc-append').append('</table>');
+              if ( size > 0 ) {
+        $('#CartCount').removeClass('hide');              
+              }else {
+                $('#CartCount').addClass('hide');             
+              }
+              $('#CartCount > span').text(size);
+              $(".cart-count-drawer").text('('+cart.item_count+')');
+            });
+            
+          }
+        }
+      });
+      return false;
+    });
+  });
+  function min_cart(){
+    $.ajax({
+      type: "GET",
+      url: '/',
+      dataType: 'html',
+      success: function(response) {
+        $('#mini-cart').html($(response).find('#mini-cart').html());
+        $.getJSON('/cart.js', function(cart) {
+          var size = cart.item_count;
+          $('#CartCount > span').text(size);
+        });
+      }
+    });
+  }; 
+
+</script>

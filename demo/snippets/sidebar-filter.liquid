@@ -1,0 +1,36 @@
+      <div class="cus-filter-t">
+
+        {% unless collection.all_tags.size == 0 %}
+        {% for block in section.blocks %}
+        <div class="cus-filters-toolbar">
+          {% if block.settings.filter_title != '' %}
+          <label class="filters-toolbar__label select-label" for="FilterTags">{{block.settings.filter_title}}</label>
+          {% endif %}
+
+          <div class="cus-filters-toolbar__input-wrapper select-group">
+            <ul class="cus-filters-toolbar " name="FilterTags" id="FilterTags" aria-describedby="a11y-refresh-page-message a11y-selection-message">
+
+              {%- assign filter_tag = block.settings.filter_tag | split: ','  -%}
+
+              {% for tag in filter_tag %}
+
+              {% if current_tags contains tag %}
+              <li class="cus-filter-y active"><input type="checkbox" class="cus-input" {% if current_tags contains tag %}checked{% endif %} >{{ tag | link_to_remove_tag: tag }}</li>
+              {% else %}
+              <li class="cus-filter-y"><input type="checkbox" class="cus-input" >{{ tag | link_to_add_tag: tag }}</li>
+              {% endif %}
+              {% endfor %}
+
+            </ul>
+
+          </div>
+
+        </div>
+        {% endfor %}
+        <div class="cus-filter-y">
+          <a class="filter__link" href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}"{% if current_tags contains tag %} selected="selected" id="tag_active"{% endif %}>Clear All</a>
+        </div>
+        {% endunless %}
+
+      </div>
+

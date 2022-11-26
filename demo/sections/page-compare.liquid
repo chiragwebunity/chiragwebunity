@@ -1,0 +1,109 @@
+<div class="cus-compare">
+  <div class="page-width">
+    <div class="ccs-section-title">
+      <h1>{{ page_title }}</h1>
+    </div>
+    <div class="ccs-form-set">
+      {% form 'contact' %}
+      <div class="cus-compare-set">
+        <div class=cc-1-set>
+          <lable>Ubicación actual</lable>
+          <div class="cus-compare-text1-set">
+            <input type="text" id="comparetext" name="compare[text]" placeholder="enter a location"/>
+            <input type="submit" class="cc-btn-text1" value="Mi ubicación" >
+          </div>
+        </div>
+        <div class="cc-2-set">
+          <label>Radio de búsqueda</label>
+          <select id="scasl-radius-container" name="bh-sl-maxdistance">
+            <option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40" selected="selected">40</option><option value="0">Sin límite</option></select>
+        </div>
+        <div class="cc-2-set">
+          <label>Medida de la búsqueda</label>
+          <select id="scasl-lengthUnit" name="scasl-lengthUnit">
+            <option value="km">Kilómetros</option>
+            <option value="m">Millas</option>
+          </select>
+        </div>
+        <div class="cc-4-set">
+          <button id="bh-sl-submit" type="submit">Buscar</button>
+        </div>
+      </div>
+      {% endform %}
+    </div>
+    <div class="cus-compare-bot-set">
+      <div class="cus-compare-set-a">
+        {% for block in section.blocks %}
+        <div class="cus-csa">
+          <div class="ccs-title">
+            {% if block.settings.ccs_heading != blank %}
+            <h2 class="ccs-title-set">{{ block.settings.ccs_heading }}</h2>
+            {% endif %}
+            {% if block.settings.ccs_disc != blank %}
+            <span class="ccs-disc-set">{{ block.settings.ccs_disc }}</span>
+            {% endif %}
+          </div>
+          {% if block.settings.ccs_cus_img != blank %}
+          <div class="ccs-img">
+            <img src="{{ block.settings.ccs_cus_img | img_url: '50x50' }}" alt="an image"/>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <div class="cus-compare-set-b">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.4700869810795!2d72.7343952653689!3d21.213199835898756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04c94d4eaf017%3A0xde4693a83e2f76ea!2sMalgama%2C%20Gujarat%20395005!5e0!3m2!1sen!2sin!4v1595242989030!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+{
+"name": "Cus compare",
+  "settings": [
+          {
+          "type": "text",
+          "id": "ccs_main_heading",
+          "label": "Section title"
+          }
+  	],
+        "blocks": [
+            {
+                "type": "block",
+                "name": "block",
+                "settings": [
+
+            {
+                "type": "text",
+                "id": "ccs_heading",
+                "label": "Enter location title"
+            },
+            {
+                "type": "richtext",
+                "id": "ccs_disc",
+                "label": "location info"
+            },
+            {
+                "type": "image_picker",
+                "id": "ccs_cus_img",
+                "label": "brand image"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": {
+          "en": "Cus compare"
+        },
+          "category": {
+          "en": "Cus compare"
+        }
+	}
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,417 @@
+
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2>{{ section.settings.title | escape }}</h2>
+    </div>
+  {% endif %}
+	 {%- assign current_variant = product.selected_or_first_available_variant -%}
+ 	 {%- assign compare_at_price = current_variant.compare_at_price -%}
+  	 {%- assign price = current_variant.price -%}
+  {%- assign collection = collections[section.settings.collection] -%}
+
+  {% case section.settings.grid %}
+  	{% when 1 %}
+    	{%- assign max_height = 800 -%}
+    {% when 2 %}
+      {%- assign max_height = 530 -%}
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when 3 %}
+      {%- assign max_height = 345 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+    {% when 4 %}
+      {%- assign max_height = 250 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+    {% when 5 %}
+      {%- assign max_height = 195 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+  {% endcase %}
+
+  {%- assign product_limit = section.settings.grid | times: section.settings.rows -%}
+
+  <ul data-slides="{{section.settings.grid}}" class="grid grid--uniform grid--view-items collection-slider">
+    
+    
+    {% for product in collection.products limit: product_limit %}
+   
+    {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+    
+      <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+        {% include 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+        
+        
+ 
+        
+        
+        
+      </li>
+    {% else %}
+
+      {% for i in (1..product_limit) %}
+        <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+          <div class="grid-view-item product-card">
+            <a class="grid-view-item__link grid-view-item__image-container full-width-link" href="#">
+              <span class="visually-hidden">{{ 'homepage.onboarding.product_title' | t }}</span>
+            </a>
+            
+            <div class="grid-view-item__image-wrapper">
+              {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+              {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+        
+            <div class="h4 grid-view-item__title" aria-hidden="true">{{ 'homepage.onboarding.product_title' | t }}</div>
+           
+            
+            
+            
+            
+          </div>
+          
+        </li>
+      {% endfor %}
+   	{% endfor %}
+  	</ul>
+  			
+</div>
+
+
+{% schema %}
+{
+  "name": {
+    "da": "Udvalgt kollektion",
+    "de": "Vorgestellte Kategorie",
+    "en": "Featured collection",
+    "es": "Colección destacada",
+    "fi": "Esittelyssä oleva kokoelma",
+    "fr": "Collection en vedette",
+    "hi": "फ़ीचर्ड कलेक्शन",
+    "it": "Collezione in evidenza",
+    "ja": "特集コレクション",
+    "ko": "추천 컬렉션",
+    "nb": "Utvalgt samling",
+    "nl": "Uitgelichte collectie",
+    "pt-BR": "Coleção em destaque",
+    "pt-PT": "Coleção em destaque",
+    "sv": "Utvald kollektion",
+    "th": "คอลเลกชันแนะนำ",
+    "zh-CN": "特色产品系列",
+    "zh-TW": "精選商品系列"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "da": "Overskrift",
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fi": "Otsake",
+        "fr": "En-tête",
+        "hi": "शीर्षक",
+        "it": "Heading",
+        "ja": "見出し",
+        "ko": "제목",
+        "nb": "Overskrift",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "pt-PT": "Título",
+        "sv": "Rubrik",
+        "th": "ส่วนหัว",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "da": "Udvalgt kollektion",
+        "de": "Vorgestellte Kategorie",
+        "en": "Featured collection",
+        "es": "Colección destacada",
+        "fi": "Esittelyssä oleva kokoelma",
+        "fr": "Collection en vedette",
+        "hi": "फ़ीचर्ड कलेक्शन",
+        "it": "Collezione in evidenza",
+        "ja": "特集コレクション",
+        "ko": "추천 컬렉션",
+        "nb": "Fremhevet samling",
+        "nl": "Uitgelichte collectie",
+        "pt-BR": "Coleção em destaque",
+        "pt-PT": "Coleção em destaque",
+        "sv": "Utvald kollektion",
+        "th": "คอลเลกชันแนะนำ",
+        "zh-CN": "特色产品系列",
+        "zh-TW": "精選商品系列"
+      }
+    },
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": {
+        "da": "Kollektion",
+        "de": "Kategorie",
+        "en": "Collection",
+        "es": "Colección",
+        "fi": "Kokoelma",
+        "fr": "Collection",
+        "hi": "कलेक्शन",
+        "it": "Collezione",
+        "ja": "コレクション",
+        "ko": "컬렉션",
+        "nb": "Samling",
+        "nl": "Collectie",
+        "pt-BR": "Coleção",
+        "pt-PT": "Coleção",
+        "sv": "Produktserie",
+        "th": "คอลเลกชัน",
+        "zh-CN": "收藏",
+        "zh-TW": "商品系列"
+      }
+    },
+	{
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": {
+        "da": "Vis antalsvælger",
+        "de": "Mengenauswahl anzeigen",
+        "en": "Show quantity selector",
+        "es": "Mostrar selector de cantidad",
+        "fi": "Näytä määrän valitsin",
+        "fr": "Afficher le sélecteur de quantité",
+        "hi": "मात्रा चयनकर्ता दिखाएं",
+        "it": "Mostra selettore quantità",
+        "ja": "数量セレクターを表示する",
+        "ko": "수량 선택기 표시",
+        "nb": "Vis mengdevelger",
+        "nl": "Hoeveelheidskiezer weergeven",
+        "pt-BR": "Exibir seletor de quantidade",
+        "pt-PT": "Mostrar um seletor de quantidade",
+        "sv": "Visa kvantitetsväljare",
+        "th": "แสดงตัวเลือกจำนวน",
+        "zh-CN": "显示数量选择器",
+        "zh-TW": "顯示數量選擇器"
+      },
+      "default": false
+    },
+	 {
+      "type": "checkbox",
+      "id": "show_variant_labels",
+      "label": {
+        "da": "Vis variantlabels",
+        "de": "Varianten-Etiketten anzeigen",
+        "en": "Show variant labels",
+        "es": "Mostrar etiquetas de variantes",
+        "fi": "Näytä vaihtoehtoiset tarrat",
+        "fr": "Afficher le nom des variantes",
+        "hi": "वेरिएंट लेबल दिखाएं",
+        "it": "Mostra etichette varianti",
+        "ja": "バリエーションのラベルを表示する",
+        "ko": "이형 상품 레이블 표시",
+        "nb": "Vis variantetiketter",
+        "nl": "Variantlabels weergeven",
+        "pt-BR": "Exibir etiquetas de variantes",
+        "pt-PT": "Mostrar etiquetas de variantes",
+        "sv": "Visa variantetiketter",
+        "th": "แสดงป้ายกำกับตัวเลือกสินค้า",
+        "zh-CN": "显示多属性标签",
+        "zh-TW": "顯示子類選項標籤"
+      },
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": {
+        "da": "Produkter pr. række",
+        "de": "Produkte per Reihe",
+        "en": "Products per row",
+        "es": "Productos por fila",
+        "fi": "Tuotteita per rivi",
+        "fr": "Produits par rangée",
+        "hi": "प्रति पंक्ति उत्पाद",
+        "it": "Prodotti per riga",
+        "ja": "行あたりの商品数",
+        "ko": "열 별 제품",
+        "nb": "Produkter per rad",
+        "nl": "Producten per rij",
+        "pt-BR": "Produtos por linha",
+        "pt-PT": "Produtos por linha",
+        "sv": "Produkter per rad",
+        "th": "สินค้าต่อแถว",
+        "zh-CN": "每行产品数",
+        "zh-TW": "每列產品數"
+      },
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": {
+        "da": "Rækker",
+        "de": "Reihen",
+        "en": "Rows",
+        "es": "Filas",
+        "fi": "Rivit",
+        "fr": "Rangées",
+        "hi": "पंक्ति",
+        "it": "Righe",
+        "ja": "行",
+        "ko": "열",
+        "nb": "Rader",
+        "nl": "Rijen",
+        "pt-BR": "Linhas",
+        "pt-PT": "Linhas",
+        "sv": "Rader",
+        "th": "แถว",
+        "zh-CN": "行数",
+        "zh-TW": "列"
+      },
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": {
+        "da": "Vis produktleverandører",
+        "de": "Produkt-Lieferanten anzeigen",
+        "en": "Show product vendors",
+        "es": "Mostrar proveedores del producto",
+        "fi": "Näytä tuotteen myyjät",
+        "fr": "Afficher les vendeurs",
+        "hi": "उत्पाद विक्रेताओं को दिखाएं",
+        "it": "Mostra fornitori prodotto",
+        "ja": "商品の販売元を表示する",
+        "ko": "제품 공급 업체 표시",
+        "nb": "Vis produktleverandører",
+        "nl": "Productleveranciers weergeven",
+        "pt-BR": "Exibir fornecedores do produto",
+        "pt-PT": "Mostrar fornecedores do produto",
+        "sv": "Visa produktleverantörer",
+        "th": "แสดงผู้ขายสินค้า",
+        "zh-CN": "显示产品厂商",
+        "zh-TW": "顯示產品廠商"
+      },
+      "default": false
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_payment_button",
+      "label": {
+        "da": "Vis dynamisk betalingsknap",
+        "de": "Dynamischen Checkout Button anzeigen",
+        "en": "Show dynamic checkout button",
+        "es": "Mostrar botón de pago dinámico",
+        "fi": "Näytä dynaaminen kassapainike",
+        "fr": "Afficher le bouton de paiement dynamique",
+        "hi": "डायनेमिक चेकआउट बटन दिखाएं",
+        "it": "Mostra pulsante di check-out dinamico",
+        "ja": "動的チェックアウトボタンを表示する",
+        "ko": "동적 결제 버튼 표시",
+        "nb": "Vis dynamisk knapp for å gå til kassen",
+        "nl": "Dynamische betaalknop weergeven",
+        "pt-BR": "Exibir botão de checkout dinâmico",
+        "pt-PT": "Mostrar o botão dinâmico de finalização da compra",
+        "sv": "Visa dynamiska utcheckningsknappar",
+        "th": "แสดงปุ่มชำระเงินแบบไดนามิก",
+        "zh-CN": "显示动态结账按钮",
+        "zh-TW": "顯示動態結帳按鈕"
+      },
+      "info": {
+        "da": "Den enkelte kunde vil se sin foretrukne betalingsmetode blandt dem, der er tilgængelige i din butik, f.eks. PayPal eller Apple Pay. [Få mere at vide](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "de": "Jeder Kunde sieht seine bevorzugte Zahlungsmethode aus den in Ihrem Shop verfügbaren Zahlungsmethoden wie PayPal oder Apple Pay. [Mehr Informationen](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "en": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "es": "Cada cliente verá su forma de pago preferida entre las disponibles en tu tienda, como PayPal o Apple Pay. [Más información](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "fi": "Kukin asiakas näkee ensisijaisen valintansa kauppasi tarjoamista maksutavoista, esim. PayPal tai Apple Pay. [Lisätietoja](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "fr": "Chaque client verra son moyen de paiement préféré parmi ceux qui sont proposés sur votre boutique, tels que PayPal ou Apple Pay. [En savoir plus](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "hi": "प्रत्येक ग्राहक आपके स्टोर पर उपलब्ध अपनी पसंदीदा भुगतान की विधि देखेंगे जैसे PayPal या Apple Pay. [अधिक जानें](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "it": "Ogni cliente vedrà il suo metodo di pagamento preferito tra quelli disponibili nel tuo negozio, come PayPal o Apple Pay. [Maggiori informazioni](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "ja": "PayPalやApple Payなど、ストアで利用可能な希望の決済方法がお客様に表示されます。[詳細情報](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "ko": "각 고객은 PayPal 또는 Apple Pay와 같이 스토어에서 사용 가능한 지불 방법을 확인할 수 있습니다. [자세히 알아보기](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "nb": "Hver enkelt kunde vil se sin foretrukne betalingsmåte blant de som er tilgjengelig i butikken din, som PayPal eller Apple Pay. [Finn ut mer](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "nl": "Elke klant ziet zijn of haar beschikbare voorkeursmethode om af te rekenen, zoals PayPal of Apple Pay. [Meer informatie](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "pt-BR": "Cada cliente verá a forma de pagamento preferencial dele dentre as disponíveis na loja, como PayPal ou Apple Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "pt-PT": "Cada cliente irá ver o seu método de pagamento preferido entre os disponíveis na loja, como o PayPal ou Apple Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "sv": "Varje kund kommer att se den föredragna betalningsmetoden från de som finns tillgängliga i din butik, till exempel PayPal eller Apple Pay. [Läs mer](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "th": "ลูกค้าแต่ละรายจะเห็นวิธีการชำระเงินที่ต้องการจากวิธีที่ใช้ได้ในร้านค้าของคุณ เช่น PayPal หรือ Apple Pay [เรียนรู้เพิ่มเติม](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "zh-CN": "每位客户都可在您商店提供的付款方式中看到他们的首选付款方式，例如 PayPal 或 Apple Pay。[了解详细信息](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "zh-TW": "每位顧客都可以在您商店內開放使用的付款方式中看見他們偏好使用的方式，如 PayPal、Apple Pay 等。[深入瞭解](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": {
+        "da": "Vis knappen \"Se flere\"",
+        "de": "'Alle anzeigen' Button anzeigen",
+        "en": "Show 'View all' button",
+        "es": "Mostrar el botón 'Ver todo'",
+        "fi": "Näytä \"Näytä kaikki\" -painike",
+        "fr": "Afficher le bouton “Tout voir”",
+        "hi": "'सभी देखें' बटन दिखाएं",
+        "it": "Mostra il pulsante \"Visualizza tutto\"",
+        "ja": "「すべて表示」ボタンを表示する",
+        "ko": "'모두 보기' 버튼 표시",
+        "nb": "Vis «Se alle»-knapp",
+        "nl": "Knop 'Alles weergeven' weergeven",
+        "pt-BR": "Exibir botão 'Visualizar tudo'",
+        "pt-PT": "Mostrar botão 'Ver tudo'",
+        "sv": "Visa \"Visa alla\"-knappen",
+        "th": "แสดงปุ่ม 'ดูทั้งหมด'",
+        "zh-CN": "显示“查看全部”按钮",
+        "zh-TW": "顯示「檢視全部」按鈕"
+      },
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "da": "Udvalgt kollektion",
+        "de": "Vorgestellte Kategorie",
+        "en": "Featured collection",
+        "es": "Colección destacada",
+        "fi": "Esittelyssä oleva kokoelma",
+        "fr": "Collection en vedette",
+        "hi": "फ़ीचर्ड कलेक्शन",
+        "it": "Collezione in evidenza",
+        "ja": "特集コレクション",
+        "ko": "추천 컬렉션",
+        "nb": "Utvalgt samling",
+        "nl": "Uitgelichte collectie",
+        "pt-BR": "Coleção em destaque",
+        "pt-PT": "Coleção em destaque",
+        "sv": "Utvald kollektion",
+        "th": "คอลเลกชันแนะนำ",
+        "zh-CN": "特色产品系列",
+        "zh-TW": "精選商品系列"
+      },
+      "category": {
+        "da": "Kollektion",
+        "de": "Kategorie",
+        "en": "Collection",
+        "es": "Colección",
+        "fi": "Kokoelma",
+        "fr": "Collection",
+        "hi": "कलेक्शन",
+        "it": "Collezione",
+        "ja": "コレクション",
+        "ko": "컬렉션",
+        "nb": "Samling",
+        "nl": "Collectie",
+        "pt-BR": "Coleção",
+        "pt-PT": "Coleção",
+        "sv": "Produktserie",
+        "th": "คอลเลกชัน",
+        "zh-CN": "收藏",
+        "zh-TW": "商品系列"
+      }
+    }
+  ]
+}
+{% endschema %}

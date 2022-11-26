@@ -1,0 +1,95 @@
+<div class="page-width"> 
+
+	<div class= "bg-img-slider">
+       {% for block in section.blocks %}
+		  <div class="bg-image-text">
+			<div class="bg-image-text-1"  style="background-image: url('{{ block.settings.logo_img | img_url:'master' }}');  background-size: 100% 100%;
+                                         background-repeat: no-repeat;  background-position: center;   width: 100%; ">
+              {% if block.settings.logo != blank %}
+                  <div class="bg-img-with-text"> 
+                               <img src="{{ block.settings.logo | img_url:'master' }}">
+                  </div>
+              {% endif %}
+            <div class="main-img">
+               {% if block.settings.cus_title != blank %}
+                  <div class="bg-img-with-text-1"> 
+                    <h2>{{ block.settings.cus_title }}</h2>
+                  </div>
+              {% endif %}
+            
+            
+               {% if block.settings.cus_desc != blank %}
+                  <div class="bg-img-with-text-1"> 
+                    <p>{{ block.settings.cus_desc  }}</p>
+                  </div>
+              {% endif %}
+              
+            
+               {% if block.settings.cus_title_1 != blank %}
+                  <div class="bg-img-with-text-2"> 
+                    <h2>{{ block.settings.cus_title_1 }}</h2>
+                  </div>
+              {% endif %}
+              
+            </div>
+              
+      	  </div>
+      </div>
+        {% endfor %}  			
+
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+   "name":"information clients",
+   "settings":[
+
+   ],
+   "blocks":[
+      {
+         "type":"image",
+         "name":"block",
+         "settings":[
+			{
+              "type": "image_picker",
+              "id": "logo_img",
+              "label": "Logo image"
+            },
+            {
+              "type": "image_picker",
+              "id": "logo",
+              "label": "Logo image"
+            },
+            {
+               "type":"text",
+               "id":"cus_title",
+               "label":"Title"
+            },
+            {
+               "type":"textarea",
+               "id":"cus_desc",
+               "label":"Description"
+            },
+ 			{
+               "type":"text",
+               "id":"cus_title_1",
+               "label":"Title"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":{
+            "en":"information clients"
+         },
+         "category":{
+            "en":"information clients"
+         }
+      }
+   ]
+}
+{% endschema %}

@@ -1,0 +1,47 @@
+ 
+<div class="page-width">
+  <div class="info-client-tt-title">
+    {% if section.settings.cus_title != blank %}
+   		<p class="cus-title">{{section.settings.cus_title}}</p>
+    {% endif %}
+    {% if section.settings.cus_desc != blank %}
+  		<p class="cus-desc">{{section.settings.cus_desc}}</p>
+    {% endif %}
+    {% if section.settings.cus_desc_sec != blank %}
+  		<p class="cus-desc-sec">{{section.settings.cus_desc_sec}}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+   "name":"opinion section",
+   "settings":[
+		{
+               "type":"text",
+               "id":"cus_title",
+               "label":"Title"
+            },
+            {
+               "type":"textarea",
+               "id":"cus_desc",
+               "label":"Description"
+            },
+            {
+               "type":"textarea",
+               "id":"cus_desc_sec",
+               "label":"Description"
+            }
+   ],
+   "presets":[
+      {
+         "name":{
+            "en":"Custom section"
+         },
+         "category":{
+            "en":"Custom section"
+         }
+      }
+   ]
+}
+{% endschema %}

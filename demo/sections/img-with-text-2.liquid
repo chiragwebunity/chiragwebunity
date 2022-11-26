@@ -1,0 +1,115 @@
+<div class="page-width">
+      <div class="tmt-img-btn-with-text">
+        
+        {% for block in section.blocks %}
+           <div class="tbc-img-text">
+              <div class="tbc-img-main">
+                {% if block.settings.logo != blank %}
+                <img src="{{ block.settings.logo | img_url: 'master' }}">
+                {% endif %} 
+              </div>
+                <div class="tbc-img-text-link-btn-bg-img"  style="
+                                                background-image: url('{{ block.settings.bg_logo | img_url:'master' }}');  background-size: 100% 100%;
+                                                 background-repeat: no-repeat;  background-position: center;   width: 30%;  height: 50px;  text-align: center; ">
+
+
+                  <a href="{{ block.settings.button_link_1 }}" class="tbc-img-text-btn-link{{forloop.index}}" > 
+                          {{ block.settings.button_label_1 | escape }}
+                        </a>
+
+
+
+
+              </div>
+            </div>
+        {%endfor%}
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+   "name":"image with btn text block",
+   "settings":[
+
+   ],
+   "blocks":[
+      {
+         "type":"image",
+         "name":"block",
+         "settings":[
+            {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+	{
+          "type": "text",
+          "id": "button_label_1",
+          "label": {
+            "da": "Knapetiket",
+            "de": "Button-Name",
+            "en": "Button label",
+            "es": "Etiqueta de botón",
+            "fi": "Painikkeen merkintä",
+            "fr": "Texte du bouton",
+            "hi": "बटन लेबल",
+            "it": "Etichetta pulsante",
+            "ja": "ボタンラベル",
+            "ko": "버튼 레이블",
+            "nb": "Knappetikett",
+            "nl": "Knoplabel",
+            "pt-BR": "Etiqueta do botão",
+            "pt-PT": "Etiqueta do botão",
+            "sv": "Knappetikett",
+            "th": "ป้ายกำกับปุ่ม",
+            "zh-CN": "按钮标签",
+            "zh-TW": "按鈕標籤"
+          }
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": {
+            "da": "Knaplink",
+            "de": "Button-Link",
+            "en": "Button link",
+            "es": "Enlace de la diapositiva",
+            "fi": "Painikkeen linkki",
+            "fr": "Lien du bouton",
+            "hi": "बटन लिंक",
+            "it": "Link slide",
+            "ja": "スライドリンク",
+            "ko": "버튼 링크",
+            "nb": "Kobling for knapp",
+            "nl": "Knoplink",
+            "pt-BR": "Link do slide",
+            "pt-PT": "Ligação do botão",
+            "sv": "Knapplänk",
+            "th": "ลิงก์ของปุ่ม",
+            "zh-CN": "按钮链接",
+            "zh-TW": "按鈕連結"
+          }
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_logo",
+          "label": "Logo image"
+        }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":{
+            "en":"image with btn text block"
+         },
+         "category":{
+            "en":"image with btn text block"
+         }
+      }
+   ]
+}
+{% endschema %}
+

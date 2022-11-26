@@ -1,0 +1,127 @@
+  
+  <div class="back-img-main" style= "background-image: url('{{ section.settings.bg_logo | img_url:'master' }}');  background-size: 100% 100%;
+                                         background-repeat: no-repeat;  background-position: center;   width: 100%;     height: 150px;  ">
+  	
+  	<div class="set-img-text">
+         
+      <div class="img-main-text">
+        <img src="{{ section.settings.img_logo | img_url:'master' }}" >
+      </div>
+      <div class="text-middle-of-main">
+        {% if section.settings.home_welcome_message != black %}
+        	<P>{{section.settings.home_welcome_message}}</P>
+        {% endif %}
+      </div>
+      <div class="btn-with-imgtext"  style= "background-image: url('{{ section.settings.bg_btn_logo | img_url:'master' }}');  background-size: 80% 70%;
+                                         background-repeat: no-repeat;  background-position: center;        height: 60px;" >
+        
+        	  <a href="{{ section.settings.button_link_1 }}" class="shop-now-btn-2" > 
+                  {{ section.settings.button_label_1 | escape }}
+                </a>
+          
+        
+      </div>
+      
+    </div>
+    
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+{
+   "name":"conatct page sec",
+   "settings":[
+      {
+        "type": "image_picker",
+        "id": "bg_logo",
+        "label": "Logo image"
+      },
+	  {
+        "type": "image_picker",
+        "id": "img_logo",
+        "label": "Logo image"
+      },
+      {
+          "type": "textarea",
+          "id": "home_welcome_message",
+          "label": "Welcome message"
+      },
+      {
+        "type": "text",
+        "id": "button_label_1",
+        "label": {
+        "da": "Knapetiket",
+        "de": "Button-Name",
+        "en": "Button label",
+        "es": "Etiqueta de botón",
+        "fi": "Painikkeen merkintä",
+        "fr": "Texte du bouton",
+        "hi": "बटन लेबल",
+        "it": "Etichetta pulsante",
+        "ja": "ボタンラベル",
+        "ko": "버튼 레이블",
+        "nb": "Knappetikett",
+        "nl": "Knoplabel",
+        "pt-BR": "Etiqueta do botão",
+        "pt-PT": "Etiqueta do botão",
+        "sv": "Knappetikett",
+        "th": "ป้ายกำกับปุ่ม",
+        "zh-CN": "按钮标签",
+        "zh-TW": "按鈕標籤"
+      	}
+      },
+      {
+          "type": "url",
+          "id": "button_link_1",
+          "label": {
+          "da": "Knaplink",
+          "de": "Button-Link",
+          "en": "Button link",
+          "es": "Enlace de la diapositiva",
+          "fi": "Painikkeen linkki",
+          "fr": "Lien du bouton",
+          "hi": "बटन लिंक",
+          "it": "Link slide",
+          "ja": "スライドリンク",
+          "ko": "버튼 링크",
+          "nb": "Kobling for knapp",
+          "nl": "Knoplink",
+          "pt-BR": "Link do slide",
+          "pt-PT": "Ligação do botão",
+          "sv": "Knapplänk",
+          "th": "ลิงก์ของปุ่ม",
+          "zh-CN": "按钮链接",
+          "zh-TW": "按鈕連結"
+      	}
+      },
+	  {
+        "type": "image_picker",
+        "id": "bg_btn_logo",
+        "label": "Logo image"
+      }
+   ],
+   "presets":[
+      {
+         "name":{
+            "en":"conatct page sec"
+         },
+         "category":{
+            "en":"conatct page sec"
+         }
+      }
+   ]
+}
+{% endschema %}

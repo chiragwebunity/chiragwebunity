@@ -1,0 +1,144 @@
+<div class="container">
+  <div class="responsibilty-environment-sec">
+    <div class="corporate-socila-sec">
+      {% if section.settings.main_title != blank %}
+      <p class="corporate-socila-sec-title">{{section.settings.main_title}}</p>
+      {% endif %}
+      {% if section.settings.main_desc != blank %}
+      <p class="corporate-socila-sec-desc">{{section.settings.main_desc}}</p>
+      {% endif %}
+    </div>
+    <div class="image-with-text-social-yt" style="background-image: url({{ section.settings.logo | img_url: 'master' }});">
+      {% if section.settings.image_title != blank %}
+      <p class="image-social-title">{{section.settings.image_title}}</p>
+      {% endif %}
+      {% if section.settings.image_desc != blank %}
+      <p class="image-social-desc">{{section.settings.image_desc}}</p>
+      {% endif %}
+    </div>
+    <div class="travelife-sec-tx-img">
+      {% if section.settings.image_desc2 != blank %}
+      <p class="svg-icon-with-heading">{{section.settings.image_desc2}}</p>
+      {% endif %}        
+      {% if section.settings.image != blank %}
+      <img src="{{section.settings.image | img_url: '305x120' }}" alt="photo" />
+      {% endif %}
+    </div>
+    <div class="policy-here-sec-re">
+      <p class="policy-here-title-yu">{{section.settings.policy_title}}</p>
+      <a href="{{section.settings.policy_url}}"><p class="policy-here-text-yu">{{section.settings.policy_link_title}}</p><img class="policy-here-svg-icon" src="{{section.settings.svg_icon}}" /></a>
+    </div>
+    <div class="environment-protect-sec">
+      {% if section.settings.environment_title != blank %}
+      <p class="envoronment-title-et">{{section.settings.environment_title}}</p>
+      {% endif %}
+      {% if section.settings.environment_desc != blank %}
+      <p class="envoronment-desc-ed">{{section.settings.environment_desc}}</p>
+      {% endif %}
+      {% if section.settings.image_2 != blank %}
+      <img src="{{section.settings.image_2 | img_url: 'master' }}" alt="photo" />
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .responsibilty-environment-sec {
+  	padding: 0 50px;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "explore info",
+    "settings": [
+		{
+           "type":      "text",
+           "id":        "main_title",
+           "label":     "Title"
+        },
+		{
+           "type":      "textarea",
+           "id":        "main_desc",
+           "label":     "Description"
+        },
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "image"
+        },
+		{
+           "type":      "text",
+           "id":        "image_title",
+           "label":     "Title"
+        },
+		{
+           "type":      "textarea",
+           "id":        "image_desc",
+           "label":     "Description"
+        },
+		{
+           "type":      "textarea",
+           "id":        "image_desc2",
+           "label":     "Description"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "image"
+        },
+		{
+           "type":      "text",
+           "id":        "policy_title",
+           "label":     "Title"
+        },
+		{
+           "type":      "text",
+           "id":        "policy_link_title",
+           "label":     "Title"
+        },
+		{
+           "type":      "text",
+           "id":        "svg_icon",
+           "label":     "svg file"
+        },
+		{
+           "type":      "url",
+           "id":        "policy_url",
+           "label":     "policy url"
+        },
+		{
+           "type":      "text",
+           "id":        "environment_title",
+           "label":     "Title"
+        },
+		{
+           "type":      "textarea",
+           "id":        "environment_desc",
+           "label":     "Description"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "image"
+        }
+	],
+  "presets": [
+    {
+      "name": {
+        "en": "explore info"
+      },
+      "category": {
+        "en": "explore info"
+      }
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %} 

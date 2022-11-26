@@ -1,0 +1,151 @@
+<div class="type-of-product-options">
+  {% if product.tags contains 'gift' %}
+  <div class="checkbox-for-gift">
+    <p class="line-item-property__field">
+      <input type="hidden" name="properties[This is your gift]" value="No">
+      <input id="this-is-your-gift" type="checkbox" name="properties[This is your gift]" value="Yes">
+      <label for="this-is-your-gift">This is for a gift</label>
+    </p>
+  </div>
+  <div class="type-of-pro-tabbing">
+    <div class="background-type-option active main-background-type">
+      <div class="title-of-option">
+        {% if section.settings.option_title1 != blank %}
+        <p>{{section.settings.option_title1}}</p>
+        {% endif %}
+      </div>
+      <div class="image-background-select">
+        {% for block in section.blocks %}
+        {% if block.settings.Background_type == 'Background type' %}
+        <div class="sub-bg-option-type background-type">
+          <input type="radio" id="{{forloop.index}}Backgroundtype" name="properties[Backgroundtype]" value="{{block.settings.cus_title}}" product-price="{{product.price | money }}">                        
+          <label for="{{forloop.index}}Backgroundtype">
+            {% if block.settings.logo != blank %}
+            <img src="{{block.settings.logo | img_url: '75x' }}" />
+            {% endif %}
+            {% if block.settings.cus_title != blank %}
+            <p>{{block.settings.cus_title}}</p>
+            {% endif %}
+          </label>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="prev-next-btn">
+        <a class="nxtBtn radio bg_type">NEXT</a>
+      </div>
+    </div>
+    <div class="background-type-option main-Decoration-type">
+      <div class="title-of-option">
+        {% if section.settings.option_title2 != blank %}
+        <p>{{section.settings.option_title2}}</p>
+        {% endif %}
+      </div>
+      <div class="image-background-select">
+        {% for block in section.blocks %}
+        {% if block.settings.Background_type == 'decoration type' %}
+        <div class="sub-bg-option-type decoration-type">
+          <input type="radio" id="{{forloop.index}}_Decoration" name="properties[Decorationtype]" value="{{block.settings.cus_title}}" product-price="{{product.price | money }}">
+          <label for="{{forloop.index}}_Decoration">
+            {% if block.settings.logo != blank %}
+            <img src="{{block.settings.logo | img_url: '75x' }}" />
+            {% endif %}
+            {% if block.settings.cus_title != blank %}
+            <p>{{block.settings.cus_title}}</p>
+            {% endif %}
+          </label>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="prev-next-btn">
+        <a class="backBtn first">BACK</a>
+        <a class="nxtBtn radio de_type">NEXT</a>
+      </div>
+    </div>
+    <div class="background-type-option main-Font-type">
+      <div class="title-of-option">
+        {% if section.settings.option_title3 != blank %}
+        <p>{{section.settings.option_title3}}</p>
+        {% endif %}
+      </div>
+      <div class="image-background-select">
+        {% for block in section.blocks %}
+        {% if block.settings.Background_type == 'font type' %}
+        <div class="sub-bg-option-type font-type">
+          <input type="radio" id="{{forloop.index}}Fonttype" name="properties[Fonttype]" value="{{block.settings.cus_title}}" product-price="{{product.price | money }}">
+          <label for="{{forloop.index}}Fonttype">
+            {% if block.settings.logo != blank %}
+            <img src="{{block.settings.logo | img_url: '75x' }}" />
+            {% endif %}
+            {% if block.settings.cus_title != blank %}
+            <p>{{block.settings.cus_title}}</p>
+            {% endif %}
+          </label>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="prev-next-btn">
+        <a class="backBtn first">BACK</a>
+        <a class="nxtBtn radio ft_type">NEXT</a>
+      </div>
+    </div>
+    <div class="background-type-option">
+      <div class="title-of-option">
+        {% if section.settings.option_title4 != blank %}
+        <p>{{section.settings.option_title4}}</p>
+        {% endif %}
+      </div>
+      <div class="image-background-select">
+        <p class="line-item-property__field text-field-tt">
+          <lable>Enter exactly what you want printed:</lable>
+          <input type="text" id="add-note-text" name="properties[Text]">
+        </p>
+      </div>
+      <div class="prev-next-btn">
+        <a class="backBtn first">BACK</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+
+
+<script>
+$(document).on("click",".backBtn",function(){
+  	$(".background-type-option").removeClass("active");
+	$(this).closest(".background-type-option").prev().addClass("active");
+});
+$(document).on("click",".bg_type",function(){
+  var val_name = $('[name="properties[Backgroundtype]"]:checked').val();
+  if (val_name == undefined) {
+  	alert('Please Select Background Type');
+  }else{
+    $(this).closest(".main-background-type").find(".title-of-option p").html("Background type :<span>"+val_name+"</span>");
+    $(".background-type-option").removeClass("active");
+    $(this).closest(".background-type-option").next().addClass("active");
+  }
+});
+$(document).on("click",".de_type",function(){
+  var val_name = $('[name="properties[Decorationtype]"]:checked').val();
+  if (val_name == undefined) {
+  	alert('Please Select Decoration Type');
+  }else{
+    $(this).closest(".main-Decoration-type").find(".title-of-option p").html("Decoration type :<span>"+val_name+"</span>");
+    $(".background-type-option").removeClass("active");
+    $(this).closest(".background-type-option").next().addClass("active");
+  }
+});
+$(document).on("click",".ft_type",function(){
+  var val_name = $('[name="properties[Fonttype]"]:checked').val();
+  if (val_name == undefined) {
+  	alert('Please Select Font Type');
+  }else{
+    $(this).closest(".main-Font-type").find(".title-of-option p").html("Font type :<span>"+val_name+"</span>");
+    $(".background-type-option").removeClass("active");
+    $(this).closest(".background-type-option").next().addClass("active");
+  }
+});
+</script>
